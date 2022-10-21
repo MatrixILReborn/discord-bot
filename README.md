@@ -18,7 +18,7 @@ The bot is coded in [TypeScript] using [Node.js] along with [discord.js].
 
 ## Installation
 
-> ⚠️ Make sure to have [Node.js] installed with _at least_ version `18.0.0`.
+> ⚠️ Make sure to have [Node.js] installed with _at least_ version `16.9.0`.
 
 1. [Clone] this repository
 2. Open the cloned repository directory in any terminal
