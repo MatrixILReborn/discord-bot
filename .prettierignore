@@ -1,0 +1,19 @@
+# Packages
+node_modules/
+
+# Bot data
+data.json
+
+# TypeScript out dir
+dist/
+
+# Environment files
+.env*
+!.env.example
+
+# Miscellaneous
+.vscode/*
+!.vscode/settings.json
+!.vscode/extensions.json
+.idea/
+.DS_Store

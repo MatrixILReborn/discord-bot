@@ -1,0 +1,39 @@
+{
+  "private": true,
+  "name": "discord-bot",
+  "version": "0.0.0-alpha",
+  "main": "dist/index.js",
+  "scripts": {
+    "prepare": "husky install",
+    "lint": "prettier -c .",
+    "format": "prettier -w .",
+    "build": "tsc",
+    "start": "npm run build && node ."
+  },
+  "author": "David Malchin <malchin459@gmail.com>",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/MatrixILReborn/discord-bot.git"
+  },
+  "bugs": {
+    "url": "https://github.com/MatrixILReborn/discord-bot/issues"
+  },
+  "homepage": "https://github.com/MatrixILReborn/discord-bot#readme",
+  "dependencies": {
+    "discord.js": "^14.6.0",
+    "dotenv": "^16.0.3",
+    "glob": "^8.0.3",
+    "node-fetch": "^2.6.7"
+  },
+  "devDependencies": {
+    "@commitlint/cli": "^17.1.2",
+    "@commitlint/config-conventional": "^17.1.0",
+    "@types/glob": "^8.0.0",
+    "@types/node": "^18.11.2",
+    "@types/node-fetch": "^2.6.2",
+    "husky": "^8.0.1",
+    "prettier": "^2.7.1",
+    "typescript": "^4.8.4"
+  }
+}

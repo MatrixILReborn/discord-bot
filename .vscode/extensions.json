@@ -1,0 +1,10 @@
+{
+  "recommendations": [
+    "EditorConfig.EditorConfig",
+    "esbenp.prettier-vscode",
+    "joshbolduc.commitlint",
+    "GitHub.vscode-pull-request-github",
+    "eamodio.gitlens",
+    "joshbolduc.commitlint"
+  ]
+}
