@@ -25,7 +25,17 @@ export default {
     async execute(interaction) {
         await interaction.channel
             ?.send(interaction.fields.getTextInputValue('message'))
-            .then(() => interaction.reply('Successfully sent the message!'))
-            .catch(() => interaction.reply('Failed to send the message!'));
+            .then(() =>
+                interaction.reply({
+                    content: 'Successfully sent the message!',
+                    ephemeral: true,
+                })
+            )
+            .catch(() =>
+                interaction.reply({
+                    content: 'Failed to send the message!',
+                    ephemeral: true,
+                })
+            );
     },
 } as BotModal;
