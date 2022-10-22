@@ -1,7 +1,10 @@
 # [Matrix IL Reborn](https://discord.gg/zYTNUn6P76) Discord Bot
 
-A custom-made single-server Discord bot
-garnered towards servers revolving around a [FiveM] server.
+An opinionated custom-made single-server Discord bot.
+
+This won't be suited for everyone and anyone is free to modify it,
+but the code in this repository will be made specifically for our own server,
+and changes that are not needed will not be added to it.
 
 The bot is coded in [TypeScript] using [Node.js] along with [discord.js].
 
