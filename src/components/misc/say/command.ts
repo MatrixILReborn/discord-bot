@@ -1,3 +1,4 @@
+import { ChatInputCommandInteraction } from 'discord.js';
 import { BotCommand } from '../../../interfaces/interaction';
 import modal from './modal';
 
@@ -7,7 +8,7 @@ export default {
         description: 'Send a message as the bot',
         defaultMemberPermissions: ['ManageGuild'],
     },
-    execute(interaction) {
+    execute(interaction: ChatInputCommandInteraction) {
         interaction.showModal(modal.data);
     },
 } as BotCommand;

@@ -1,4 +1,4 @@
-import { ComponentType } from 'discord.js';
+import { ChatInputCommandInteraction, ComponentType } from 'discord.js';
 import { BotCommand } from '../../../interfaces/interaction';
 import button from './button';
 
@@ -7,7 +7,7 @@ export default {
         name: 'example',
         description: 'An example command!',
     },
-    async execute(interaction) {
+    async execute(interaction: ChatInputCommandInteraction) {
         await interaction.reply({
             content: 'Click on the magic button!',
             components: [
