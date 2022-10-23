@@ -1,0 +1,3 @@
+{
+  "*": ["prettier -u -w", "git add", "prettier -c"]
+}
