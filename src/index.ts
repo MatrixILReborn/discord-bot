@@ -20,6 +20,14 @@ client.buttons = new Collection();
 client.selectMenus = new Collection();
 client.modals = new Collection();
 
+const processObject = (obj: object) => {
+    if (isEvent(obj)) client[obj.type](obj.name, obj.execute);
+    else if (isCommand(obj)) client.commands.set(obj.data.name, obj);
+    else if (isButton(obj)) client.buttons.set(obj.data.custom_id, obj);
+    else if (isSelectMenu(obj)) client.selectMenus.set(obj.data.custom_id, obj);
+    else if (isModal(obj)) client.modals.set(obj.data.custom_id, obj);
+};
+
 (async () => {
     const dirs = await readdir(`${__dirname}/components`, {
         encoding: 'utf-8',
@@ -30,12 +38,8 @@ client.modals = new Collection();
         const files = glob.sync(`./dist/components/${dir.name}/**/*.js`);
         for (const filePath of files) {
             const obj = require(filePath.replace('dist/', '')).default;
-            if (isEvent(obj)) client[obj.type](obj.name, obj.execute);
-            else if (isCommand(obj)) client.commands.set(obj.data.name, obj);
-            else if (isButton(obj)) client.buttons.set(obj.data.custom_id, obj);
-            else if (isSelectMenu(obj))
-                client.selectMenus.set(obj.data.custom_id, obj);
-            else if (isModal(obj)) client.modals.set(obj.data.custom_id, obj);
+            if (Array.isArray(obj)) obj.forEach((x) => processObject(x));
+            else processObject(obj);
         }
         console.log(`Loaded ${dir.name} component`);
     }
